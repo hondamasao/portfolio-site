@@ -140,10 +140,19 @@ footer {
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+
+body.fade-start {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+body.fade-in {
+  opacity: 1;
+}
 </style>
 </head>
 
-<body>
+<body class="fade-start">
 
 <header>
   <h1>Masao Honda</h1>
@@ -214,6 +223,11 @@ document.addEventListener('keydown', function(e) {
   if (e.key === "Escape") closeModal();
   if (e.key === "ArrowRight") changeImage(1);
   if (e.key === "ArrowLeft") changeImage(-1);
+});
+
+window.addEventListener('DOMContentLoaded', function() {
+  document.body.classList.remove('fade-start');
+  document.body.classList.add('fade-in');
 });
 </script>
 
