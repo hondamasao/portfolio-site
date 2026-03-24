@@ -80,13 +80,32 @@ h1 {
   cursor: pointer;
 }
 
-  .modal {
-  display: none;
+.modal {
+  opacity: 0;
+  visibility: hidden;
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.95);
+  display: flex;
   justify-content: center;
   align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 85vh;
+  transform: scale(0.96);
+  transition: transform 0.3s ease;
+}
+
+.modal.active img {
+  transform: scale(1);
 }
 
 .modal img {
@@ -170,13 +189,18 @@ function openModal(src) {
 
   currentIndex = images.findIndex(i => i.src.includes(src.split('/').pop()));
   img.src = src;
-  modal.style.display = 'flex';
+
+  modal.classList.add('active');
 }
 
 function closeModal() {
-  document.getElementById('modal').style.display = 'none';
+  const modal = document.getElementById('modal');
+  modal.classList.remove('active');
 }
 
+function changeImage(direction) {
+  ...
+}
 function changeImage(direction) {
   currentIndex += direction;
 
