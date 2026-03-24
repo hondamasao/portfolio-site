@@ -16,7 +16,7 @@ body {
 }
 
 header {
-  padding: 80px 20px 40px;
+  padding: 120px 20px 60px;
   text-align: center;
 }
 
@@ -35,29 +35,25 @@ header p {
 }
 
 .gallery {
-  column-count: 4;
-  column-gap: 8px;
-  padding: 8px;
-}
-
-.gallery img {
-  width: 100%;
-  margin-bottom: 8px;
-  display: block;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  padding: 40px 8vw;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .gallery img {
   width: 100%;
   display: block;
   cursor: pointer;
-  transition: opacity 0.2s ease;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
 .gallery img:hover {
-  opacity: 0.85;
+  transform: scale(1.02);
+  opacity: 0.9;
 }
-
-
 
 .modal button {
   margin-top: 20px;
