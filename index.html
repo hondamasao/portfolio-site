@@ -117,18 +117,23 @@ h1 {
 <div class="modal" id="modal">
   <span class="close" onclick="closeModal()">&times;</span>
   <img id="modal-img">
-  <button onclick="window.open('#','_blank')">Buy Print</button>
 </div>
 
 <script>
 function openModal(src) {
-  document.getElementById('modal').style.display = 'flex';
-  document.getElementById('modal-img').src = src;
+  const modal = document.getElementById('modal');
+  const img = document.getElementById('modal-img');
+  img.src = src;
+  modal.style.display = 'flex';
 }
 
 function closeModal() {
   document.getElementById('modal').style.display = 'none';
 }
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === "Escape") closeModal();
+});
 </script>
 
 </body>
