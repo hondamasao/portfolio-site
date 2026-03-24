@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Masao Honda</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #111;
+  color: #fff;
+}
+
+header {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 8px;
+  padding: 8px;
+}
+
+.gallery img {
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.gallery img:hover {
+  opacity: 0.85;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 80vh;
+}
+
+.modal button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Masao Honda</h1>
+  <p>Film photography exploring transit, coastlines, and quiet moments.</p>
+</header>
+
+<section class="gallery">
+  <!-- Duplicate this block for each image -->
+  <img src="images/thumbs/01.jpg" onclick="openModal('images/fulls/01.jpg')">
+  <img src="images/thumbs/02.jpg" onclick="openModal('images/fulls/02.jpg')">
+  <img src="images/thumbs/03.jpg" onclick="openModal('images/fulls/03.jpg')">
+  <img src="images/thumbs/04.jpg" onclick="openModal('images/fulls/04.jpg')">
+  <img src="images/thumbs/06.jpg" onclick="openModal('images/fulls/06.jpg')">
+  <img src="images/thumbs/07.jpg" onclick="openModal('images/fulls/07.jpg')">
+  <img src="images/thumbs/08.jpg" onclick="openModal('images/fulls/08.jpg')">
+  <img src="images/thumbs/10.jpg" onclick="openModal('images/fulls/10.jpg')">
+  <img src="images/thumbs/11.jpg" onclick="openModal('images/fulls/11.jpg')">
+  <img src="images/thumbs/12.jpg" onclick="openModal('images/fulls/12.jpg')">
+  <img src="images/thumbs/13.jpg" onclick="openModal('images/fulls/13.jpg')">
+  <img src="images/thumbs/14.jpg" onclick="openModal('images/fulls/14.jpg')">
+  <img src="images/thumbs/15.jpg" onclick="openModal('images/fulls/15.jpg')">
+  <img src="images/thumbs/16.jpg" onclick="openModal('images/fulls/16.jpg')">
+  <img src="images/thumbs/18.jpg" onclick="openModal('images/fulls/18.jpg')">
+  <img src="images/thumbs/19.jpg" onclick="openModal('images/fulls/19.jpg')">
+  <img src="images/thumbs/20.jpg" onclick="openModal('images/fulls/20.jpg')">
+  <img src="images/thumbs/21.jpg" onclick="openModal('images/fulls/21.jpg')">
+  <img src="images/thumbs/22.jpg" onclick="openModal('images/fulls/22.jpg')">
+  <img src="images/thumbs/23.jpg" onclick="openModal('images/fulls/23.jpg')">
+  <img src="images/thumbs/24.jpg" onclick="openModal('images/fulls/24.jpg')">
+</section>
+
+<div class="modal" id="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img id="modal-img">
+  <button onclick="window.open('#','_blank')">Buy Print</button>
+</div>
+
+<script>
+function openModal(src) {
+  document.getElementById('modal').style.display = 'flex';
+  document.getElementById('modal-img').src = src;
+}
+
+function closeModal() {
+  document.getElementById('modal').style.display = 'none';
+}
+</script>
+
+</body>
+</html>
