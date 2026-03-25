@@ -169,6 +169,19 @@ body.fade-start {
 body.fade-in {
   opacity: 1;
 }
+
+.nav-link {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.6;
+  border-bottom: 1px solid transparent;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-link:hover {
+  opacity: 1;
+  border-bottom: 1px solid rgba(255,255,255,0.6);
+}
 </style>
 </head>
 
@@ -177,7 +190,7 @@ body.fade-in {
 <header>
   <h1>Masao Honda</h1>
   <p>Selected Works, 2022-2025</p>
-  <p><a href="about.html" style="color: inherit; text-decoration: none; opacity: 0.6;">About</a></p>
+ <p><a href="about.html" class="nav-link">About</a></p>
 </header>
 
 <section class="gallery">
